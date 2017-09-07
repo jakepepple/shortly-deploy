@@ -14922,7 +14922,7 @@ Handlebars.template = Handlebars.VM.template;
   };
 
 }).call(this);
-; window.Shortly = Backbone.View.extend({
+; ; window.Shortly = Backbone.View.extend({
   template: Templates.layout,
 
   events: {
