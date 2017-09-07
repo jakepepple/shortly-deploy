@@ -8,4 +8,5 @@ app.listen(port, process.env.HOST);
 //app.listen(port);
 
 console.log('Server now listening on port ' + port);
-console.log('work damn you');
+console.log('still works');
+console.log(process.env.HOST);
