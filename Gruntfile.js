@@ -116,6 +116,7 @@ module.exports = function(grunt) {
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
       // add your production server task here
+      
 
     } else {
       grunt.task.run([ 'server-dev' ]);
@@ -125,7 +126,7 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', [
     // add your deploy tasks here
     
-    'eslint', 'test', 'build', 'shell'
+    'eslint', 'test', 'shell'
   ]);
 
 
