@@ -35,13 +35,7 @@ module.exports = function(grunt) {
         
       },
       prod: {
-        script: 'server.js',
-        options: {
-          env: {
-            PORT: "80",
-            HOST: "104.236.92.88"
-          }
-        }
+        script: 'liveServer.js',
         
           
       }
