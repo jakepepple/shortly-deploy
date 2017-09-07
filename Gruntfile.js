@@ -3,25 +3,16 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
-    },
-
-    gitAdd:{
-      taske:{
-        options: {
-          all: true
-        }
+      options: {
+        separator: ';'
+      },
+      dist: {
+        src: ['public/**/*.js'],
+        dest: 'public/dist/build.js'
       }
+
+      
     },
-
-    gitCommit:{
-
-
-    },
-
-    gitPush:{
-
-    },
-    
 
     mochaTest: {
       test: {
@@ -53,11 +44,20 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      dev:{
+        files: {
+          'public/dist/build.min.js': ['public/dist/build.js']
+        }
+
+      }
+     
     },
 
     eslint: {
       target: [
         // Add list of files to lint here
+        'public/client/*.js'
+
       ]
     },
 
@@ -84,9 +84,8 @@ module.exports = function(grunt) {
     shell: {
       liveUpload: {
         command: ['git add .', 'git commit -m "grunt commit"', 'git push live'].join("&&")
-        
-        
       }
+
     },
   });
 
@@ -111,7 +110,7 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTask('build', [
+  grunt.registerTask('build', [ 'concat', 'uglify'
   ]);
 
   grunt.registerTask('upload', function(n) {
@@ -125,6 +124,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', [
     // add your deploy tasks here
+    'eslint', 'test', 'build', 'shell'
   ]);
 
 
