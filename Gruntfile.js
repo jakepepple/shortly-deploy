@@ -5,6 +5,24 @@ module.exports = function(grunt) {
     concat: {
     },
 
+    gitAdd:{
+      taske:{
+        options: {
+          all: true
+        }
+      }
+    },
+
+    gitCommit:{
+
+
+    },
+
+    gitPush:{
+
+    },
+    
+
     mochaTest: {
       test: {
         options: {
@@ -27,6 +45,7 @@ module.exports = function(grunt) {
       },
       prod: {
         script: 'server.js',
+        
           
       }
         
@@ -63,7 +82,10 @@ module.exports = function(grunt) {
     },
 
     shell: {
-      prodServer: {
+      liveUpload: {
+        command: ['git add .', 'git commit -m "grunt commit"', 'git push live'].join("&&")
+        
+        
       }
     },
   });
@@ -95,6 +117,7 @@ module.exports = function(grunt) {
   grunt.registerTask('upload', function(n) {
     if (grunt.option('prod')) {
       // add your production server task here
+
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
