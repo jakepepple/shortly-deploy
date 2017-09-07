@@ -1579,7 +1579,7 @@
   };
 
 }).call(this);
-;/*
+; /*
 
 Copyright (C) 2011 by Yehuda Katz
 
@@ -3857,7 +3857,7 @@ Handlebars.template = Handlebars.VM.template;
 // lib/handlebars/browser-suffix.js
 })(Handlebars);
 ;
-;/*!
+; /*!
  * jQuery JavaScript Library v1.10.2
  * http://jquery.com/
  *
@@ -13646,7 +13646,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 }
 
 })( window );
-;//     Underscore.js 1.5.2
+; //     Underscore.js 1.5.2
 //     http://underscorejs.org
 //     (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 //     Underscore may be freely distributed under the MIT license.
@@ -14922,7 +14922,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
   });
 
 }).call(this);
-;window.Shortly = Backbone.View.extend({
+; window.Shortly = Backbone.View.extend({
   template: Templates.layout,
 
   events: {
@@ -14962,7 +14962,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
       .addClass('selected');
   }
 });
-;Shortly.createLinkView = Backbone.View.extend({
+; Shortly.createLinkView = Backbone.View.extend({
   className: 'creator',
 
   template: Templates.create,
@@ -15017,10 +15017,10 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
       .removeClass('error');
   }
 });
-;Shortly.Link = Backbone.Model.extend({
+; Shortly.Link = Backbone.Model.extend({
   urlRoot: '/links'
 });
-;Shortly.LinkView = Backbone.View.extend({
+; Shortly.LinkView = Backbone.View.extend({
   className: 'link',
 
   template: Templates.link,
@@ -15031,11 +15031,11 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     return this;
   }
 });
-;Shortly.Links = Backbone.Collection.extend({
+; Shortly.Links = Backbone.Collection.extend({
   model: Shortly.Link,
   url: '/links'
 });
-;Shortly.LinksView = Backbone.View.extend({
+; Shortly.LinksView = Backbone.View.extend({
   className: 'links',
 
   initialize: function() {
@@ -15057,7 +15057,7 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
     this.$el.append(view.render().el);
   }
 });
-;Shortly.Router = Backbone.Router.extend({
+; Shortly.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$el = options.el;
   },
