@@ -16,8 +16,21 @@ module.exports = function(grunt) {
 
     nodemon: {
       dev: {
-        script: 'server.js'
+        script: 'server.js',
+        options: {
+          env: { 
+            PORT: '4569',
+            HOST: 'localhost'
+          }
+        }
+        
+      },
+      prod: {
+        script: 'server.js',
+          
       }
+        
+      
     },
 
     uglify: {
