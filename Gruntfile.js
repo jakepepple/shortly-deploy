@@ -14,6 +14,8 @@ module.exports = function(grunt) {
       
     },
 
+    clean: ['public/dist/'],
+
     mochaTest: {
       test: {
         options: {
@@ -52,6 +54,7 @@ module.exports = function(grunt) {
       }
      
     },
+    
 
     eslint: {
       target: [
@@ -97,6 +100,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-shell');
   grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-contrib-clean');
 
   grunt.registerTask('server-dev', function (target) {
     grunt.task.run([ 'nodemon:prod', 'watch' ]);
@@ -110,7 +114,7 @@ module.exports = function(grunt) {
     'mochaTest'
   ]);
 
-  grunt.registerTask('build', [ 'concat', 'uglify'
+  grunt.registerTask('build', [ 'clean', 'concat', 'uglify'
   ]);
 
   grunt.registerTask('upload', function(n) {
@@ -126,7 +130,7 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', [
     // add your deploy tasks here
     
-    'eslint', 'test', 'build' ,'shell'
+    'eslint', 'test', 'build','shell'
   ]);
 
 
