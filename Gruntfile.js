@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         separator: '; '
       },
       dist: {
-        src: ['public/lib/underscore.js','public/lib/jquery.js','public/lib/handlebars.js','public/lib/backbone.js','views/', 'public/client/*.js',  ],
+        src: ['public/lib/underscore.js', 'public/lib/jquery.js', 'public/lib/handlebars.js', 'public/lib/backbone.js', 'views/', 'public/client/*.js', ],
         dest: 'public/dist/build.js'
       }
 
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      dev:{
+      dev: {
         files: {
           'public/dist/build.min.js': ['public/dist/build.js']
         }
@@ -66,14 +66,11 @@ module.exports = function(grunt) {
 
     cssmin: {
       target: {
-        files: [{
-          expand: true,
-          cwd: 'public/lib/',
-          src: ['*.css'],
-          dest: 'dist/styles.css',
-          ext: 'min.css'
-        }]
        
+        files: {
+          'dist/styles.css': ['public/style.css']
+        }
+        
 
       }
      
@@ -98,7 +95,7 @@ module.exports = function(grunt) {
 
     shell: {
       liveUpload: {
-        command: ['git add .', 'git commit -m "grunt commit"', 'git push live'].join("&&")
+        command: ['git add .', 'git commit -m "grunt commit"', 'git push live'].join('&&')
       }
 
     },
@@ -142,7 +139,7 @@ module.exports = function(grunt) {
   grunt.registerTask('deploy', [
     // add your deploy tasks here
     
-    'eslint', 'test', 'build','shell'
+    'eslint', 'test', 'build', 'shell'
   ]);
 
 
