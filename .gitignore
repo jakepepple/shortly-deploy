@@ -7,8 +7,7 @@ npm-debug.log
 db/shortly.sqlite
 node_modules
 
-views/partials/index.ejs
-views/partials/layout.ejs
+
 
 
 
